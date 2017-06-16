@@ -14,3 +14,21 @@ function validacion(){
 		alert("Por favor ingresa una clave correcta");
 	}
 }	
+
+/* FUNCION DRAG */
+
+function drag(ev){
+	ev.dataTransfer.setData('img', ev.target.id)
+}
+
+function permitirDrop(ev){
+	ev.preventDefault();
+}
+
+function drop(ev){
+	ev.preventDefault();
+
+	var id_foto = ev.dataTransfer.getData('img');
+
+	ev.target.appendChild(document.getElementById(id_foto));
+}
